@@ -1,0 +1,137 @@
+@font-face{
+  font-family: 'AnonymousPro';
+  src: url('/FONTS/FONTS/AnonymousPro-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'AnonymousPro italic';
+    src: url('/FONTS/FONTS/AnonymousPro-Italic.ttf');
+}
+
+@font-face {
+    font-family: 'AnonymousPro bold';
+    src: url('/FONTS/FONTS/AnonymousPro-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'AnonymousPro bold italic';
+    src: url('/FONTS/FONTS/AnonymousPro-BoldItalic.ttf');
+}
+
+/* main */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container, header, main {
+    margin: 0;
+    padding: 0;
+}
+
+.mainimage {
+    width: 100%;
+    height: 100%;
+}
+
+.h1-mainpage .h1p1 {
+    font-size: 6vh;
+    color: #ffffff;
+    position: absolute;
+    left: 31.2%;
+    top: 44%;
+    text-align: center;
+    font-family: 'AnonymousPro';
+}
+
+.h1-mainpage .h2p2 {
+    font-size: 3vh;
+    color: #ffffff;
+    position: absolute;
+    left: 35.8%;
+    top: 60%;
+    text-align: center;
+    font-family: 'AnonymousPro';
+}
+
+.panel1,
+.panel2,
+.panel3 {
+    background-color: #353535;
+    position: absolute;
+    width: 14%;
+    height: 7%;
+    border-radius: 4vh;
+    top: 13vh;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.panel1 {
+    left: 27%;
+}
+
+.panel2 {
+    left: 42%;
+}
+
+.panel3 {
+    left: 57%;
+}
+
+.panel4 {
+    background-color: #353535;
+    position: absolute;
+    width: 16%;
+    height: 10%;
+    border-radius: 4vh;
+    top: 94vh;
+    left: 42%;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.p1,
+.p2,
+.p3 {
+    color: #ffffff;
+    font-size: 3vh;
+    position: absolute;
+    font-family: 'AnonymousPro';
+    transition: all 0.4s ease;
+    pointer-events: none;
+    z-index: 2;
+    top: 12%;
+}
+
+.p1 {
+    left: 30.8%;
+}
+
+.p2 {
+    left: 45.8%;
+}
+
+.p3 {
+    left: 61.8%;
+}
+
+.p4 {
+    color: #ffffff;
+    font-size: 4vh;
+    position: absolute;
+    font-family: 'AnonymousPro';
+    transition: all 0.4s ease;
+    pointer-events: none;
+    z-index: 2;
+    top: 93%;
+    left: 47.2%;
+}
