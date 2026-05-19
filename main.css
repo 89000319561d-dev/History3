@@ -24,6 +24,7 @@ body, html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .container, header, main {
@@ -134,4 +135,118 @@ body, html {
     z-index: 2;
     top: 93%;
     left: 47.2%;
+}
+
+/* страница (введение) */
+
+.image1 {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 113vh;
+    left: 0vh;
+}
+
+.h2-mainpage .h3p3 {
+    font-size: 6vh;
+    color: #ffffff;
+    position: absolute;
+    left: 43%;
+    top: 123%;
+    text-align: center;
+    font-family: 'AnonymousPro';
+}
+
+.h2-mainpage .h4p4 {
+    font-size: 4vh;
+    color: #ffffff;
+    position: absolute;
+    left: 5.5%;
+    top: 145%;
+    text-align: center;
+    font-family: 'AnonymousPro';
+    line-height: 1.2;
+}
+
+.ikon-main {
+    position: absolute;
+    left: 4vh;
+    top: 117vh;
+    width: 5vh;
+    height: 5vh;
+}
+
+/* страница (итоги) */
+
+.image2 {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 226vh;
+    left: 0vh;
+}
+
+.h3-mainpage .h1p1 {
+    font-size: 7vh;
+    color: #ffffff;
+    position: absolute;
+    left: 4.5%;
+    top: 234%;
+    text-align: center;
+    font-family: 'AnonymousPro';
+    letter-spacing: 8px;
+}
+
+.h3-mainpage .h2p2 {
+    font-size: 4vh;
+    color: #ffffff;
+    position: absolute;
+    left: 4.5%;
+    top: 247%;
+    text-align: left;
+    font-family: 'AnonymousPro';
+    line-height: 1.2;
+}
+
+.h3-mainpage .h3p3 {
+    font-size: 4vh;
+    color: #ffffff;
+    position: absolute;
+    left: 8%;
+    top: 260%;
+    text-align: left;
+    font-family: 'AnonymousPro';
+    line-height: 1.2;
+}
+
+.h3-mainpage .h4p4 {
+    font-size: 4vh;
+    color: #ffffff;
+    position: absolute;
+    left: 4.5%;
+    top: 282%;
+    font-family: 'AnonymousPro';
+}
+
+.h3-mainpage .h5p5 {
+    font-size: 4vh;
+    color: #ffffff;
+    position: absolute;
+    left: 8%;
+    top: 290%;
+    text-align: left;
+    font-family: 'AnonymousPro';
+    line-height: 1.1;
+}
+
+.ikon-main2 {
+    position: absolute;
+    left: 4vh;
+    top: 230vh;
+    width: 5vh;
+    height: 5vh;
+}
+
+#results-section {
+    scroll-margin-top: -3000px;  /* отступ при прокрутке */
 }
