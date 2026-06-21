@@ -25,6 +25,9 @@ body, html {
     padding: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    cursor: default;
+    overflow: hidden;
+    height: 100%;
 }
 
 .container, header, main {
@@ -42,7 +45,7 @@ body, html {
     color: #ffffff;
     position: absolute;
     left: 31.2%;
-    top: 44%;
+    top: 37%;
     text-align: center;
     font-family: 'AnonymousPro';
 }
@@ -52,7 +55,7 @@ body, html {
     color: #ffffff;
     position: absolute;
     left: 35.8%;
-    top: 60%;
+    top: 53%;
     text-align: center;
     font-family: 'AnonymousPro';
 }
@@ -91,7 +94,7 @@ body, html {
     width: 16%;
     height: 10%;
     border-radius: 4vh;
-    top: 94vh;
+    top: 85vh;
     left: 42%;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -133,7 +136,7 @@ body, html {
     transition: all 0.4s ease;
     pointer-events: none;
     z-index: 2;
-    top: 93%;
+    top: 84%;
     left: 47.2%;
 }
 
@@ -187,7 +190,7 @@ body, html {
 }
 
 .h3-mainpage .h1p1 {
-    font-size: 7vh;
+    font-size: 6.5vh;
     color: #ffffff;
     position: absolute;
     left: 4.5%;
@@ -198,7 +201,7 @@ body, html {
 }
 
 .h3-mainpage .h2p2 {
-    font-size: 4vh;
+    font-size: 3.9vh;
     color: #ffffff;
     position: absolute;
     left: 4.5%;
@@ -209,7 +212,7 @@ body, html {
 }
 
 .h3-mainpage .h3p3 {
-    font-size: 4vh;
+    font-size: 3.9vh;
     color: #ffffff;
     position: absolute;
     left: 8%;
@@ -220,7 +223,7 @@ body, html {
 }
 
 .h3-mainpage .h4p4 {
-    font-size: 4vh;
+    font-size: 3.9vh;
     color: #ffffff;
     position: absolute;
     left: 4.5%;
@@ -229,7 +232,7 @@ body, html {
 }
 
 .h3-mainpage .h5p5 {
-    font-size: 4vh;
+    font-size: 3.9vh;
     color: #ffffff;
     position: absolute;
     left: 8%;
@@ -249,4 +252,1404 @@ body, html {
 
 #results-section {
     scroll-margin-top: -3000px;  /* отступ при прокрутке */
+}
+
+/* Все страницы — фиксированные, без прокрутки внутри */
+#page-main, #page-intro, #page-results {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Контент внутри страниц — нормальное позиционирование без огромных top */
+#page-intro .h2-mainpage,
+#page-results .h3-mainpage {
+    position: relative;
+    height: 100vh;
+    overflow-y: auto;  /* если контент не влезает — скролл внутри страницы, но не всей */
+}
+
+/* Для страницы "Введение" — корректируем положение текста */
+.h2-mainpage .h3p3 {
+    top: 8% !important;
+}
+
+.h2-mainpage .h4p4 {
+    top: 25% !important;
+    height: auto;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* Для страницы "Итоги" — корректируем положение */
+.h3-mainpage .h1p1 {
+    top: 5% !important;
+}
+
+.h3-mainpage .h2p2 {
+    top: 15% !important;
+}
+
+.h3-mainpage .h3p3 {
+    top: 26% !important;
+    max-height: 20vh;
+}
+
+.h3-mainpage .h4p4 {
+    top: 48% !important;
+}
+
+.h3-mainpage .h5p5 {
+    top: 54% !important;
+    max-height: 30vh;
+    
+}
+
+.mainimage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+/* Глобальная иконка домой (видна везде) */
+.global-home {
+    position: fixed;
+    left: 4vh;
+    top: 4vh;
+    width: 5vh;
+    height: 5vh;
+    cursor: pointer;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.global-home:hover {
+    transform: scale(1.2);
+}
+
+/* СТРАНИЦА КЛЮЧЕВЫХ ЛИЧНОСТЕЙ */
+#page-personalities {
+    background-image: url(/Фото/Russo-Japanese_War\ 1.svg);
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.person-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 313px);
+    grid-template-rows: repeat(2, 335px);
+    padding: 0;
+    height: auto;
+    width: auto;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    gap: 35vh 50vh;
+}
+
+.person-card {
+    width: 30vh;
+    height: 32vh;
+    background: none;
+    border-radius: 4vh;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    
+}
+
+.person-card:nth-child(n+4) {
+    margin-top: -8vh;
+}
+
+.person-card:hover {
+    transform: translateY(-1vh);
+    border-color: #ffffff;
+    transform: translateY(-2vh) scale(1.06);
+}
+
+.person-photo {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2vh;
+    margin-bottom: 2vh;
+    background-color: #2a2a2a;
+}
+
+.person-name {
+    font-size: 3vh;
+    margin: 0vh 0 1vh;
+    color: #ffffff;
+    font-family: 'AnonymousPro';
+    white-space: nowrap;
+}
+
+.person-title-small {
+    font-size: 2.5vh;
+    opacity: 0.8;
+    margin-bottom: 1vh;
+}
+
+#page-personalities .h1 {
+    position: absolute;
+    color: #ffffff;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 68vh;
+}
+
+/* СТРАНИЦА НИКОЛАЙ II */
+#page-nikolai {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+}
+
+#backBtnContainer {
+    left: 4vh;
+    top: 3.5vh;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+#backBtnContainer:hover {
+    transform: scale(1.2);
+}
+
+.nikolai-text .subtitle {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 12vh;
+    top: 3vh;
+}
+
+.nikolai-text .subtitle1 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 19vh;
+}
+
+.nikolai-text .subtitle2 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 29vh;
+}
+
+.nikolai-text .subtitle3 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 49vh;
+}
+
+.nikolai-text .subtitle4 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 67vh;
+}
+
+.nikolai-text .imege1 {
+    position: absolute;
+    left: 117vh;
+    top: 12vh;
+    width: 80vh;
+    height: 80vh;
+}
+
+/* СТРАНИЦА СЕРГЕЙ ВИТТЕ */
+#page-witte {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+}
+
+.witte-text .subtitle {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 12vh;
+    top: 3vh;
+}
+
+.witte-text .desc {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 19vh;
+}
+
+.witte-text .desc2 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 35vh;
+}
+
+.witte-text .desc3 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 44vh;
+}
+
+.witte-text .desc4 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 54vh;
+}
+
+.witte-text .desc5 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 64vh;
+}
+
+.witte-content .image {
+    position: absolute;
+    left: 114vh;
+    top: 12vh;
+    width: 80vh;
+    height: 80vh;
+}
+
+/* Эффект для кнопки назад как у домой */
+#backBtnWitte {
+    left: 4vh;
+    top: 3.5vh;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+#backBtnWitte:hover {
+    transform: scale(1.2);
+}
+
+/* СТРАНИЦА АЛЕКСЕЙ КУРОПАТКИН */
+#page-kuropatkin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+}
+
+#backBtnKuropatkin {
+    left: 4vh;
+    top: 3.5vh;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+#backBtnKuropatkin:hover {
+    transform: scale(1.2);
+}
+
+.kuropatkin-content .image {
+    position: absolute;
+    left: 8vh;
+    top: 12vh;
+    width: 80vh;
+    height: 80vh;
+}
+
+.kuropatkin-text .subtitle {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 86vh;
+    top: 3vh;
+}
+
+.kuropatkin-text .desc {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 86vh;
+    top: 19vh;
+}
+
+.kuropatkin-text .desc2 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 86vh;
+    top: 25vh;
+}
+
+.kuropatkin-text .desc3 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 86vh;
+    top: 41vh;
+}
+
+.kuropatkin-text .desc4 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 86vh;
+    top: 59vh;
+}
+
+.kuropatkin-text .desc5 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 86vh;
+    top: 71vh;
+}
+
+/* СТРАНИЦА АНАТОЛИЙ СТЕССЕЛЬ */
+#page-stessel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+}
+
+#backBtnStessel {
+    left: 4vh;
+    top: 3.5vh;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+#backBtnStessel:hover {
+    transform: scale(1.2);
+}
+
+.stessel-text .subtitle {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 12vh;
+    top: 3vh;
+}
+
+.stessel-text .desc {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 19vh;
+}
+
+.stessel-text .desc2 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 28vh;
+}
+
+.stessel-text .desc3 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 37vh;
+}
+
+.stessel-text .desc4 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 49vh;
+}
+
+.stessel-text .desc5 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 55vh;
+}
+
+.stessel-text .desc6 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 64vh;
+}
+
+.stessel-text .desc7 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 73vh;
+}
+
+.stessel-content .image {
+    position: absolute;
+    left: 111vh;
+    top: 11vh;
+    width: 80vh;
+    height: 80vh;
+}
+
+/* СТРАНИЦА АДМИРАЛ РОЖЕСТВЕНСКИЙ */
+#page-rozhdestvensky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+}
+
+#backBtnRozhdestvensky {
+    left: 4vh;
+    top: 3.5vh;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+#backBtnRozhdestvensky:hover {
+    transform: scale(1.2);
+}
+
+.rozhdestvensky-text .subtitle {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 12vh;
+    top: 3vh;
+}
+
+.rozhdestvensky-text .desc {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 19vh;
+}
+
+.rozhdestvensky-text .desc2 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 28vh;
+}
+
+.rozhdestvensky-text .desc3 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 43vh;
+}
+
+.rozhdestvensky-text .desc4 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 55vh;
+}
+
+.rozhdestvensky-text .desc5 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 70vh;
+}
+
+.rozhdestvensky-content .image {
+    position: absolute;
+    left: 111vh;
+    top: 11vh;
+    width: 80vh;
+    height: 80vh;
+}
+
+/* СТРАНИЦА АДМИРАЛ МАКАРОВ */
+#page-makarov {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+}
+
+#backBtnMakarov {
+    left: 4vh;
+    top: 3.5vh;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+#backBtnMakarov:hover {
+    transform: scale(1.2);
+}
+
+.makarov-text .subtitle {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 94vh;
+    top: 7vh;
+}
+
+.makarov-text .desc {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 94vh;
+    top: 23vh;
+}
+
+.makarov-text .desc2 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 94vh;
+    top: 36vh;
+}
+
+.makarov-text .desc3 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 94vh;
+    top: 52vh;
+}
+
+.makarov-text .desc4 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 94vh;
+    top: 68vh;
+}
+
+.makarov-content .image {
+    position: absolute;
+    left: 8vh;
+    top: 12vh;
+    width: 80vh;
+    height: 80vh;
+}
+
+/* кнопка к другим личностям  */
+#btnOtherPersonalities {
+    top: 4vh;
+    left: 11vh;
+    transition: transform 0.3s ease;
+}
+
+#btnOtherPersonalities:hover {
+    transform: scale(1.2);
+}
+
+/* СТРАНИЦА ЯПОНСКИЕ ЛИЧНОСТИ */
+#page-other-personalities {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/Фото/Russo-Japanese_War\ 1.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+}
+
+.other-personalities-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+}
+
+.h1-other {
+    position: absolute;
+    color: #ffffff;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 68vh;
+    top: 3vh;
+}
+
+.other-person-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 313px);
+    gap: 30vh;
+    justify-content: center;
+    justify-content: start;  
+    margin-left: -19vh;
+}
+
+#backBtnOtherPersonalities {
+    position: absolute;
+    left: 4vh;
+    top: 3.5vh;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#backBtnOtherPersonalities:hover {
+    transform: scale(1.2);
+}
+
+/* СТРАНИЦА ОЯМА ИВАО */
+#page-oyama {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+}
+
+#backBtnOyama {
+    left: 4vh;
+    top: 3.5vh;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+#backBtnOyama:hover {
+    transform: scale(1.2);
+}
+
+.oyama-text .subtitle {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 12vh;
+    top: 6vh;
+}
+
+.oyama-text .desc {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 25vh;
+}
+
+.oyama-text .desc2 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 38vh;
+}
+
+.oyama-text .desc3 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 54vh;
+}
+
+.oyama-content .image {
+    position: absolute;
+    left: 110vh;
+    top: 12vh;
+    width: 80vh;
+    height: 80vh;
+}
+
+/* СТРАНИЦА ТОГО ХЭЙХАТИРО */
+#page-togo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+}
+
+#backBtnTogo {
+    left: 4vh;
+    top: 3.5vh;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+#backBtnTogo:hover {
+    transform: scale(1.2);
+}
+
+.togo-text .subtitle {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 12vh;
+    top: 6vh;
+}
+
+.togo-text .desc {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 25vh;
+}
+
+.togo-text .desc2 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 38vh;
+}
+
+.togo-text .desc3 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 67vh;
+}
+
+.togo-content .image {
+    position: absolute;
+    left: 110vh;
+    top: 12vh;
+    width: 80vh;
+    height: 80vh;
+}
+
+/* СТРАНИЦА КАРТА */
+#page-map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    z-index: 50;
+    overflow: hidden;
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+}
+
+.map-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 80px 20px 20px 20px;
+}
+
+#backBtnMap {
+    position: absolute;
+    left: 4vh;
+    top: 3.5vh;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#backBtnMap:hover {
+    transform: scale(1.2);
+}
+
+.map-placeholder {
+    width: 230%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+    margin-top: -20vh;
+    position: relative;
+    left: -18vw;
+}
+
+/* МЕЧИ */
+.swords-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;  /* клики проходят сквозь контейнер */
+}
+
+.sword {
+    position: absolute;
+    width: 5vh;
+    height: 5vh;
+    cursor: pointer;
+    pointer-events: auto;  /* только мечи кликабельны */
+    transition: transform 0.3s ease;
+}
+
+.sword:hover {
+    transform: scale(1.3);
+}
+
+.sword img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ПЛАШКА С ИНФОЙ */
+.info-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);  /* затемнение фона */
+}
+
+.popup-content {
+    background-color: #909090;
+    padding: 30px 40px;
+    border-radius: 80px;
+    max-width: 150vh;
+    width: 120vh;
+    height: 75vh;
+    color: rgb(0, 0, 0);
+    animation: popupFadeIn 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-left: -60vh;
+    position: relative;  /* ← ЭТО ГЛАВНОЕ */
+    animation: popupFadeIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    padding-left: 10vh;   /* сдвигает всё содержимое вправо */
+}
+
+.popup-close {
+    position: absolute;
+    top: 28px;
+    right: 1.9vh;
+    font-size: 100px;
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.popup-close:hover {
+    transform: scale(1.3);
+}
+
+.popup-content h3 {
+    font-size: 4vh;
+    margin-bottom: 10px;
+}
+
+.popup-content p {
+    font-size: 3vh;
+    line-height: 1.2;  
+    word-wrap: break-word;       /* переносит длинные слова */
+    overflow-wrap: break-word;   /* переносит длинные слова */
+    white-space: normal;         /* разрешает перенос строк */
+    max-height: 80%;             /* чтобы не вылезал за плашку */
+    overflow-y: auto;  
+}
+
+/* АНИМАЦИЯ ПОЯВЛЕНИЯ */
+@keyframes popupFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-5deg) translateY(-30px);
+    }
+    60% {
+        transform: scale(1.05) rotate(1deg) translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg) translateY(0);
+    }
+}
+
+@keyframes popupFadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.2) translateY(30px);
+    }
+}
+
+.popup-content.closing {
+    animation: popupFadeOut 0.3s ease-in forwards;
+}
+
+/* 3 ПЛАШКИ ПОД КАРТОЙ */
+.bottom-panel {
+    position: absolute;
+    bottom: 8vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    max-width: 130vh;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    border-radius: 5vh;
+    padding: 45px 50px;
+    z-index: 20;
+}
+
+.bottom-panel-inner {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.bottom-card {
+    flex: 1;
+    background: #353535;
+    border-radius: 5vh;
+    padding: 15px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bottom-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.bottom-card h4 {
+    font-size: 2.5vh;
+    margin: 0 0 5px 0;
+    color: #ffd966;
+}
+
+.bottom-card p {
+    font-size: 2.5vh;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.bottom-card:hover p {
+    color: #000000;                /* тёмный текст при наведении */
+}
+
+/* СТРАНИЦА ПРИЧИНА ВОЙНЫ */
+#page-reason {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+}
+
+.reason-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#backBtnReason {
+    position: absolute;
+    left: 4vh;
+    top: 3.5vh;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#backBtnReason:hover {
+    transform: scale(1.2);
+}
+
+.reason-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #2a2a2a; /* временный фон, пока не вставишь свой */
+    background-image: url('/Фото/фон\ причин\ войны.svg');
+}
+
+.reason-text .ptik {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 12vh;
+    top: 8vh;
+}
+
+.reason-text .ptik2 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3.5vh;
+    left: 12vh;
+    top: 25vh;
+}
+
+.reason-text .ptik3 {
+     position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 40vh;
+}
+
+/* СТРАНИЦА ВОЕННЫЕ КАМПАНИИ */
+#page-campaigns {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+}
+
+#backBtnCampaigns {
+    position: absolute;
+    left: 4vh;
+    top: 3.5vh;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#backBtnCampaigns:hover {
+    transform: scale(1.2);
+}
+
+.campaigns-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.campaigns-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #2a2a2a;
+    background-image: url('/Фото/военные\ компании\ фон.svg') ;
+}
+
+.campaigns-text .substile {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 12vh;
+    top: 2vh;
+}
+
+.campaigns-text .substile2 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 16vh;
+}
+
+.campaigns-text .substile3 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 26vh;
+}
+
+.campaigns-text .substile4 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 45vh;
+}
+
+.campaigns-text .substile5 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 67vh;
+}
+
+.campaigns-text .substile6 {
+    position: fixed;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 12vh;
+    top: 77vh;
+}
+
+/* СТРАНИЦА ФЛОТ И ВООРУЖЕНИЕ */
+#page-fleet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    z-index: 50;
+    overflow-y: auto;  /* прокрутка */
+    color: white;
+    font-family: 'AnonymousPro', monospace;
+    overflow-x: hidden;
+}
+
+.fleet-container {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    padding: 80px 20px 40px 20px;
+}
+
+#backBtnFleet {
+    position: absolute;
+    left: 4vh;
+    top: 3.5vh;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#backBtnFleet {
+    position: absolute;
+    left: 4vh;
+    top: 3.5vh;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#backBtnFleet:hover {
+    transform: scale(1.2);
+}
+
+.fleet-text .distrikt {
+    position: relative;
+    font-family: 'AnonymousPro';
+    font-size: 7vh;
+    left: 10vh;
+    top: 2vh;
+}
+
+.fleet-text .distrikt2 {
+    position: relative;
+    font-family: 'AnonymousPro';
+    font-size: 5vh;
+    left: 10vh;
+    top: -1vh;
+}
+
+.fleet-text .distrikt3 {
+    position: relative;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 10vh;
+    top: -4vh;
+}
+
+.fleet-text .distrikt4 {
+    position: relative;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 10vh;
+    top: -4vh;
+}
+
+.fleet-text .distrikt5 {
+    position: relative;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 10vh;
+    top: -4vh;
+}
+
+.fleet-photo {
+    width: 80%;
+    max-width: 85vh;
+    margin-left: 105vh;
+    height: auto;
+    margin-top: -160vh;
+    border-radius: 20px;
+    background-color: #2a2a2a;
+}
+
+.fleet-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.fleet-photo2 {
+    width: 80%;
+    max-width: 85vh;
+    margin-left: 10vh;
+    height: auto;
+    margin-top: 35vh;
+    border-radius: 20px;
+    background-color: #2a2a2a;
+}
+
+.fleet-photo2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.fleet-text .trips {
+    position: relative;
+    font-family: 'AnonymousPro';
+    font-size: 5vh;
+    left: 102vh;
+    top: 8vh;
+}
+
+.fleet-text .trips2 {
+    position: relative;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 102vh;
+    top: 9vh;
+}
+
+.fleet-text .trips3 {
+    position: relative;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 102vh;
+    top: 10vh;
+}
+
+.fleet-text .trips4 {
+    position: relative;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 102vh;
+    top: 11vh;
+}
+
+.fleet-text .trips5 {
+    position: relative;
+    font-family: 'AnonymousPro';
+    font-size: 3vh;
+    left: 102vh;
+    top: 12vh;
+}
+
+.hop {
+    width: 80%;
+    max-width: 85vh;
+    margin-left: 10vh;
+    height: auto;
+    margin-top: 5vh;
+    border-radius: 20px;
+    background-color: #2a2a2a;
+    opacity: 0;
 }
