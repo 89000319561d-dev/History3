@@ -1,21 +1,21 @@
 @font-face{
   font-family: 'AnonymousPro';
-  src: url('/FONTS/FONTS/AnonymousPro-Regular.ttf');
+  src: url('FONTS/FONTS/AnonymousPro-Regular.ttf');
 }
 
 @font-face {
     font-family: 'AnonymousPro italic';
-    src: url('/FONTS/FONTS/AnonymousPro-Italic.ttf');
+    src: url('FONTS/FONTS/AnonymousPro-Italic.ttf');
 }
 
 @font-face {
     font-family: 'AnonymousPro bold';
-    src: url('/FONTS/FONTS/AnonymousPro-Bold.ttf');
+    src: url('FONTS/FONTS/AnonymousPro-Bold.ttf');
 }
 
 @font-face {
     font-family: 'AnonymousPro bold italic';
-    src: url('/FONTS/FONTS/AnonymousPro-BoldItalic.ttf');
+    src: url('FONTS/FONTS/AnonymousPro-BoldItalic.ttf');
 }
 
 /* main */
@@ -251,7 +251,7 @@ body, html {
 }
 
 #results-section {
-    scroll-margin-top: -3000px;  /* отступ при прокрутке */
+    scroll-margin-top: -3000px; 
 }
 
 /* Все страницы — фиксированные, без прокрутки внутри */
@@ -270,7 +270,7 @@ body, html {
 #page-results .h3-mainpage {
     position: relative;
     height: 100vh;
-    overflow-y: auto;  /* если контент не влезает — скролл внутри страницы, но не всей */
+    overflow-y: auto; 
 }
 
 /* Для страницы "Введение" — корректируем положение текста */
@@ -339,7 +339,7 @@ body, html {
 
 /* СТРАНИЦА КЛЮЧЕВЫХ ЛИЧНОСТЕЙ */
 #page-personalities {
-    background-image: url(/Фото/Russo-Japanese_War\ 1.svg);
+    background-image: url(Фото/Russo-Japanese_War\ 1.svg);
     height: 100%;
     background-size: cover;
     background-position: center;
@@ -924,7 +924,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(/Фото/Russo-Japanese_War\ 1.svg);
+    background-image: url(Фото/Russo-Japanese_War\ 1.svg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1160,7 +1160,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;  /* клики проходят сквозь контейнер */
+    pointer-events: none;  
 }
 
 .sword {
@@ -1168,7 +1168,7 @@ body, html {
     width: 5vh;
     height: 5vh;
     cursor: pointer;
-    pointer-events: auto;  /* только мечи кликабельны */
+    pointer-events: auto; 
     transition: transform 0.3s ease;
 }
 
@@ -1193,7 +1193,7 @@ body, html {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.5);  /* затемнение фона */
+    background: rgba(0, 0, 0, 0.5);  
 }
 
 .popup-content {
@@ -1207,9 +1207,9 @@ body, html {
     animation: popupFadeIn 0.3s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     margin-left: -60vh;
-    position: relative;  /* ← ЭТО ГЛАВНОЕ */
+    position: relative; 
     animation: popupFadeIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    padding-left: 10vh;   /* сдвигает всё содержимое вправо */
+    padding-left: 10vh;  
 }
 
 .popup-close {
@@ -1236,10 +1236,10 @@ body, html {
 .popup-content p {
     font-size: 3vh;
     line-height: 1.2;  
-    word-wrap: break-word;       /* переносит длинные слова */
-    overflow-wrap: break-word;   /* переносит длинные слова */
-    white-space: normal;         /* разрешает перенос строк */
-    max-height: 80%;             /* чтобы не вылезал за плашку */
+    word-wrap: break-word;       
+    overflow-wrap: break-word;  
+    white-space: normal;         
+    max-height: 80%;            
     overflow-y: auto;  
 }
 
@@ -1325,7 +1325,7 @@ body, html {
 }
 
 .bottom-card:hover p {
-    color: #000000;                /* тёмный текст при наведении */
+    color: #000000;                
 }
 
 /* СТРАНИЦА ПРИЧИНА ВОЙНЫ */
@@ -1367,8 +1367,8 @@ body, html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #2a2a2a; /* временный фон, пока не вставишь свой */
-    background-image: url('/Фото/фон\ причин\ войны.svg');
+    background-color: #2a2a2a; 
+    background-image: url('Фото/фон\ причин\ войны.svg');
 }
 
 .reason-text .ptik {
@@ -1435,7 +1435,7 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-color: #2a2a2a;
-    background-image: url('/Фото/военные\ компании\ фон.svg') ;
+    background-image: url('Фото/военные\ компании\ фон.svg') ;
 }
 
 .campaigns-text .substile {
@@ -1495,7 +1495,7 @@ body, html {
     height: 100%;
     background-color: #353535;
     z-index: 50;
-    overflow-y: auto;  /* прокрутка */
+    overflow-y: auto;  
     color: white;
     font-family: 'AnonymousPro', monospace;
     overflow-x: hidden;
